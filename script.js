@@ -12,6 +12,7 @@
   setText('[data-service-area]', config.serviceArea || 'Southern Oregon');
   setText('[data-ccb]', config.ccb);
   setText('[data-electrical-license]', config.electricalContractorLicense);
+  setText('[data-pronunciation]', config.pronunciation || 'KEN-en');
   setText('[data-year]', String(new Date().getFullYear()));
 
   qsa('[data-phone-link]').forEach((link) => {
@@ -28,6 +29,14 @@
   });
   qsa('[data-ccb-wrap]').forEach((el) => { if (config.ccb) el.hidden = false; });
   qsa('[data-electrical-license-wrap]').forEach((el) => { if (config.electricalContractorLicense) el.hidden = false; });
+
+  // Keep the umlaut in the visual wordmark and German etymology only.
+  // Running English copy uses the registered/public spelling: Konnen.
+  qsa('.footer-brand p').forEach((el) => {
+    if (el.textContent.includes('Delivered with Können')) {
+      el.textContent = 'Built on knowledge. Delivered with Konnen.';
+    }
+  });
 
   const header = document.querySelector('[data-header]');
   const onScroll = () => {
@@ -102,7 +111,7 @@
 
       const subject = `Project request - ${projectType || 'Electrical work'} - ${first} ${last}`;
       const body = [
-        'Können Electrical project request',
+        'Konnen Electrical project request',
         '',
         `Name: ${first} ${last}`,
         `Phone: ${phone}`,
@@ -121,7 +130,7 @@
       ].join('\n');
 
       if (status) {
-        status.textContent = 'Opening your email app with the project details. Review the message, then send it to Können.';
+        status.textContent = 'Opening your email app with the project details. Review the message, then send it to Konnen.';
         status.classList.remove('is-error');
       }
       window.location.href = `mailto:${encodeURIComponent(config.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -132,8 +141,9 @@
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'Electrician',
-      name: config.company || 'Können Electrical LLC',
+      name: config.company || 'Konnen Electrical LLC',
       legalName: config.legalName || 'Konnen Electrical LLC',
+      alternateName: config.displayName || 'KÖNNEN ELECTRICAL',
       url: 'https://konnenelectrical.com/',
       description: 'Electrical service, troubleshooting, upgrades, remodel and project work in Southern Oregon.',
       areaServed: config.serviceArea || 'Southern Oregon'
