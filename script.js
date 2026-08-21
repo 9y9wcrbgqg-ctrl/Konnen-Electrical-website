@@ -102,7 +102,7 @@
 
       const subject = `Project request - ${projectType || 'Electrical work'} - ${first} ${last}`;
       const body = [
-        'Konnen Electrical project request',
+        'Können Electrical project request',
         '',
         `Name: ${first} ${last}`,
         `Phone: ${phone}`,
@@ -121,7 +121,7 @@
       ].join('\n');
 
       if (status) {
-        status.textContent = 'Opening your email app with the project details. Review the message, then send it to Konnen.';
+        status.textContent = 'Opening your email app with the project details. Review the message, then send it to Können.';
         status.classList.remove('is-error');
       }
       window.location.href = `mailto:${encodeURIComponent(config.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -132,7 +132,8 @@
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'Electrician',
-      name: config.company || 'Konnen Electrical LLC',
+      name: config.company || 'Können Electrical LLC',
+      legalName: config.legalName || 'Konnen Electrical LLC',
       url: 'https://konnenelectrical.com/',
       description: 'Electrical service, troubleshooting, upgrades, remodel and project work in Southern Oregon.',
       areaServed: config.serviceArea || 'Southern Oregon'
