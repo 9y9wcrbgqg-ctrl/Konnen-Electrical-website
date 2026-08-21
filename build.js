@@ -4,12 +4,17 @@ const path = require('path');
 const out = path.join(__dirname, 'dist');
 const files = [
   'index.html',
+  'services.html',
   'about.html',
-  'capabilities.html',
   'contact.html',
+  'privacy.html',
+  '404.html',
   'styles.css',
   'script.js',
-  'favicon.svg'
+  'site-config.js',
+  'favicon.svg',
+  'robots.txt',
+  'sitemap.xml'
 ];
 
 fs.rmSync(out, { recursive: true, force: true });
