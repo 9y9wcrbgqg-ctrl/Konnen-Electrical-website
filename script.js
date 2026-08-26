@@ -1,10 +1,12 @@
 (() => {
   const config = window.KONNEN_CONFIG || {};
 
-  if (!document.querySelector('link[href="/brand-refresh.css"]')) {
+  // Internal pages may not include the brand stylesheet directly. Add it only
+  // when it is genuinely missing; the homepage already includes a versioned copy.
+  if (!document.querySelector('link[href*="brand-refresh.css"]')) {
     const brandStyles = document.createElement('link');
     brandStyles.rel = 'stylesheet';
-    brandStyles.href = '/brand-refresh.css';
+    brandStyles.href = '/brand-refresh.css?v=20260825f';
     document.head.appendChild(brandStyles);
   }
 
