@@ -10,6 +10,14 @@
     document.head.appendChild(brandStyles);
   }
 
+  // Keep the brighter Konnen green palette consistent on every page.
+  if (!document.querySelector('link[href*="brand-color.css"]')) {
+    const colorStyles = document.createElement('link');
+    colorStyles.rel = 'stylesheet';
+    colorStyles.href = '/brand-color.css?v=20260826a';
+    document.head.appendChild(colorStyles);
+  }
+
   const qsa = (selector) => Array.from(document.querySelectorAll(selector));
   const setText = (selector, value) => {
     if (!value) return;
