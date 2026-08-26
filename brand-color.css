@@ -1,0 +1,18 @@
+:root{
+  --brand-green:#6faf42;
+  --brand-green-dark:#3f6e32;
+  --brand-green-light:#9bcb64;
+  --brand-green-soft:#edf5e8;
+  --copper:var(--brand-green);
+  --copper-dark:var(--brand-green-dark);
+  --copper-light:var(--brand-green-light);
+  --sage:var(--brand-green);
+  --sage-light:var(--brand-green-soft);
+}
+
+/* Brighter Konnen green: high-visibility energy tempered with forest green. */
+.reference-kicker.light{color:#b9dc8f}
+.reference-hero-accent span{background:rgba(155,203,100,.92)}
+.reference-solution-card:hover{border-color:rgba(155,203,100,.70)}
+.reference-footer-grid h3,.footer-grid h3{color:#a9c987}
+.reference-footer-grid .brand-type small,.clean-footer-grid .brand-type small{color:#9fc87b}
