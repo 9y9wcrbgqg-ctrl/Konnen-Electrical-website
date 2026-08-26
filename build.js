@@ -10,6 +10,7 @@ const files = [
   'privacy.html',
   '404.html',
   'styles.css',
+  'brand-refresh.css',
   'script.js',
   'site-config.js',
   'favicon.svg',
