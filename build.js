@@ -11,6 +11,7 @@ const files = [
   '404.html',
   'styles.css',
   'brand-refresh.css',
+  'brand-color.css',
   'script.js',
   'site-config.js',
   'favicon.svg',
